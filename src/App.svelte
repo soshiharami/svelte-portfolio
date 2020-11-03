@@ -1,26 +1,30 @@
-<h1>Hello {name}!</h1>
-<p>
-  <Counter />
-  <Counter value={1}>Counter 1</Counter>
-  <Counter value={$count} step={3}>Counter 2</Counter>
-</p>
-
-<style>
-  h1 {
-    color: purple;
-  }
-</style>
+<Heder id="header"/>
+<div>
+    <About/>
+</div>
 
 <script lang="ts">
-  import { onMount } from "svelte";
-  import { writable } from "svelte/store";
-
-  import Counter from "./Counter.svelte";
-
-  const count = writable(100);
-
-  export let name: string;
-  onMount(() => {
-    console.log("App mounted");
-  });
+    import Heder from "./compornent/Heder.svelte";
+    import About from "./compornent/About.svelte";
 </script>
+
+<style>
+    #header{
+        position:fixed;
+        top:0;
+        margin:0;
+        padding:4px;
+        width:100%;
+        background-color:#ccc;
+        z-index:9999;
+        height:50px;
+    }
+    div{
+        height:100px;
+    }
+    input, button, textarea, select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+</style>
